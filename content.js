@@ -7,7 +7,11 @@
 
 chrome.runtime.onMessage.addListener(messageGotten);
 
-function messageGotten()
+function messageGotten(request, sender, sendResponse) {
+  if (request.txt === "hello") {
+    window.location.assign('https://www.codesmith.io/');
+  }
+}
 
 /* Used to create a bookmark 
 MDN: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks/create
